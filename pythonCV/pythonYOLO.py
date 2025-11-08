@@ -3,6 +3,7 @@ import cv2
 import datetime
 from pathlib import Path
 import registroPlanilha
+import envio_separado
 
 # Devido o uso da biblioteca pathlib, agora o caminho para os arquivos funcionam em qualquer SO
 
@@ -60,6 +61,7 @@ while(capVideo.isOpened()):
             registroPlanilha.adicionar_registro(output_pasta / f'fumante_{cont_registro}.jpg', nome_planilha, "cafeteria(placeholder)")
             cont_registro+=1
             alerta = True
+            envio_separado.enviar_emails(dataHoraAtual, output_pasta / f'fumante_{cont_registro}.jpg')
         # nao é o primeiro alerta
         else:
             print((agora - ultimo_registro).total_seconds())
@@ -68,6 +70,7 @@ while(capVideo.isOpened()):
                 registroPlanilha.adicionar_registro(output_pasta / f'fumante_{cont_registro}.jpg', nome_planilha, "cafeteria(placeholder)")
                 ultimo_registro = agora
                 cont_registro+=1
+                envio_separado.enviar_emails(dataHoraAtual, output_pasta / f'fumante_{cont_registro}.jpg')
 
         
     cv2.putText(frameAnotado, dataHoraAtual, (10,30), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 250, 250), 2, cv2.LINE_AA)
