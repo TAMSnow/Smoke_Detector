@@ -37,7 +37,7 @@ Sistema de visão computacional desenvolvido com intensivos treinamentos utiliza
 ```
  3. Execute em seu computador (é necessário ter uma câmera conectada).
 ```
-    python detector_principal.py
+    python detectorPrincipal.py
 ```
 
 ## ☀️ Possíveis Futuros
