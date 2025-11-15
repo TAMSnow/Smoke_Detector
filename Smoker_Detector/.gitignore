@@ -1,0 +1,14 @@
+contatos.csv
+fumantes_video.avi
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+fumantes/
+*.jpg
+*.avi
+*.mp4
+
+config.py
+*.env
