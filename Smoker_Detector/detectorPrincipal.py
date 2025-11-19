@@ -1,11 +1,10 @@
 from ultralytics import YOLO
 import cv2
 import datetime
-from pathlib import Path
+from pathlib import Path # Devido o uso da biblioteca pathlib, agora o caminho para os arquivos funcionam em qualquer SO
 import registroPlanilha
 import envioSeparado
-
-# Devido o uso da biblioteca pathlib, agora o caminho para os arquivos funcionam em qualquer SO
+# IMPORTANTE: para envio de e-mails é necessário um arquivo chamado "contatos.csv" com as colunas 'emails, nomes'
 
 #   para realizar registro
 ultimo_registro = None
@@ -50,7 +49,7 @@ while(capVideo.isOpened()):
     # Só considera "fumante" se tiver os 3 elementos:
     fumante_detectado = (pessoa_detectada and cigarro_detectado and fumando_detectado)
 
-    # .plot() rotula as coisas no vídeo para visualização
+    # .plot() rotula as coisas no vídeo para visualização:
     frameAnotado = resultados[0].plot()
     # coloca data-hora por cima da exibição
     cv2.putText(frameAnotado, dataHoraAtual, (10,30), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 250, 250), 2, cv2.LINE_AA)
