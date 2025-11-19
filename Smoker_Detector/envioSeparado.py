@@ -4,7 +4,6 @@ import os
 def enviar_emails(dataHora, imagem):
     # 1. Carregar o arquivo
     contatos = pd.read_csv('contatos.csv')
-    print(contatos.columns.tolist())
     imagem_path = os.path.abspath(imagem)
 
     # 2. Inicializar o Outlook (fora do loop, é mais eficiente)
@@ -18,7 +17,7 @@ def enviar_emails(dataHora, imagem):
 
         #  Criar o corpo do email personalizado
 
-        corpo_email_personalizado = f"Olá, {nome_do_contato}\n\tUm fumante em área proibida foi detectado durante {dataHora}."
+        corpo_email_personalizado = f"Olá, {nome_do_contato}\n\tFoi detectado alguém fumando em uma área restrita durante {dataHora}."
 
         # Criar e configurar o email
         email = outlook.CreateItem(0)
