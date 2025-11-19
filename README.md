@@ -43,7 +43,9 @@ Sistema de visão computacional desenvolvido com intensivos treinamentos utiliza
 ## ☀️ Possíveis Futuros
 - Integração com câmeras IP.
 - Analise estatística de horarios de pico e locais com mais registros.
-
+- Detecção de cigarros eletrônicos.
+- Substituição do csv para banco de dados relacional.
+- Método mais eficiente e multiplataforma para envio de e-mails.
 
 ## 👥 Autores
 - [Gabriel Felipe](https://github.com/gabrielf-elipe)
